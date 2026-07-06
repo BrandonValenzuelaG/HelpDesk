@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 
 public class TicketRequestDTO {
-
+    private Long idUser;
     private String subject;
     private String message;
     private String urgency;

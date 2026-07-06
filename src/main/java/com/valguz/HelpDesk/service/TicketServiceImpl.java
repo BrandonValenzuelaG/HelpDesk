@@ -35,11 +35,11 @@ public class TicketServiceImpl implements TicketService {
 
         User user = findUser.userExists(ticket.getIdUser());
 
-       Ticket newTicket = Mapper.uToEntity(ticket, user);
-       newTicket.setStatus("OPEN");
-       Ticket ticketSaved = rep.save(newTicket);
+        Ticket newTicket = Mapper.uToEntity(ticket, user);
+        newTicket.setStatus("OPEN");
+        Ticket ticketSaved = rep.save(newTicket);
 
-       return Mapper.tToDTO(ticketSaved);
+        return Mapper.tToDTO(ticketSaved);
 
     }
 

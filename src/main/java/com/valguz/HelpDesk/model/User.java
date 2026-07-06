@@ -1,5 +1,6 @@
 package com.valguz.HelpDesk.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.valguz.HelpDesk.model.enums.RoleType;
 import com.valguz.HelpDesk.model.enums.UserStatus;
 import jakarta.persistence.*;

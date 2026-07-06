@@ -1,5 +1,6 @@
 package com.valguz.HelpDesk.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 

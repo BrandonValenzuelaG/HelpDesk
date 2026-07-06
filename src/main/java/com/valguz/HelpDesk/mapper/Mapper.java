@@ -31,6 +31,9 @@ public class Mapper {
                 .idTicket(ticket.getId())
                 .userName(ticket.getUser().getName())
                 .subject(ticket.getSubject())
+                .message(ticket.getMessage())
+                .urgency(ticket.getUrgency())
+                .createdAt(ticket.getCreatedAt())
                 .status(ticket.getStatus())
                 .build();
 

@@ -20,37 +20,36 @@ public class TicketController {
     private final TicketService ticketServices;
 
     @GetMapping
-    public ResponseEntity<List<TicketResponseDTO>> getTickets () {
+    public ResponseEntity<List<TicketResponseDTO>> getTickets() {
 
         return ResponseEntity.ok(ticketServices.getTickets());
 
     }
 
     @PostMapping
-    public ResponseEntity<TicketResponseDTO> newTicket (@RequestBody TicketRequestDTO dto) {
+    public ResponseEntity<TicketResponseDTO> newTicket(@RequestBody TicketRequestDTO dto) {
 
-    TicketResponseDTO newTicket = ticketServices.newTicket(dto);
+        TicketResponseDTO newTicket = ticketServices.newTicket(dto);
 
         return ResponseEntity.created(URI.create("/api/ticket/" + newTicket.getIdTicket())).body(newTicket);
 
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TicketResponseDTO> upTicket (@PathVariable Long id, @RequestBody TicketUpdateDTO dto) {
+    public ResponseEntity<TicketResponseDTO> upTicket(@PathVariable Long id, @RequestBody TicketUpdateDTO dto) {
 
         return ResponseEntity.ok(ticketServices.updateTicket(id, dto));
 
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteTicket (@PathVariable Long id) {
+    public ResponseEntity<Void> deleteTicket(@PathVariable Long id) {
 
         ticketServices.deleteTicket(id);
 
         return ResponseEntity.noContent().build();
 
     }
-
 
 
 }
