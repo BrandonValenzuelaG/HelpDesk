@@ -49,11 +49,19 @@ public class TicketServiceImpl implements TicketService {
         Ticket upTicket = rep.findById(idTicket)
                 .orElseThrow(() -> new NotFoundException("Ticket no encontrado..."));
 
-        upTicket.setStatus(ticket.getStatus());
-        upTicket.setComment(ticket.getComment());
+        if  (ticket.getStatus() != null) {
+
+            upTicket.setStatus(ticket.getStatus());
+
+        }
+
+        if (ticket.getComment() != null && !ticket.getComment().isEmpty()) {
+
+            upTicket.setComment(ticket.getComment());
+
+        }
 
         Ticket upSaved = rep.save(upTicket);
-
         return Mapper.tToDTO(upSaved);
 
     }

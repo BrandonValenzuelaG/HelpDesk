@@ -1,0 +1,17 @@
+spring.application.name=HelpDesk
+
+# 1. El traductor para MySQL
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# 2. La ruta (localhost significa "mi propia computadora", 3306 es el puerto por defecto de MySQL)
+spring.datasource.url=jdbc:mysql://localhost:3306/helpdesk
+
+# 3 y 4. Tus credenciales de acceso
+spring.datasource.username=user
+spring.datasource.password=
+
+# 5. La instrucci�n para que Spring Boot cree las tablas por ti basado en tus Entidades
+spring.jpa.hibernate.ddl-auto=update
+
+# Opcional: Esto hace que en tu consola de IntelliJ/Eclipse se impriman las consultas SQL que hace por detr�s
+spring.jpa.show-sql=true
