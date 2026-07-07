@@ -27,7 +27,7 @@ public class TicketServiceImpl implements TicketService {
     @Override
     public List<TicketResponseDTO> getTickets() {
 
-        return rep.findAll().stream().map(Mapper::tToDTO).toList();
+        return rep.findAllActive().stream().map(Mapper::tToDTO).toList();
     }
 
     @Override
